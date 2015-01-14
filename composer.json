@@ -1,0 +1,16 @@
+{
+    "name"          : "vbuck/rootd-wordpress-core",
+    "license"       : "MIT",
+    "type"          : "wordpress-muplugin",
+    "description"   : "Rootd WordPress framework core.",
+    "authors"       : [
+        {
+            "name"  : "Rick Buczynski",
+            "email" : "me@rickbuczynski.com"
+        }
+    ],
+    "require"       : {
+        "composer/installers" : "~1.0"
+    }
+}
+
