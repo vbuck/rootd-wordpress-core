@@ -30,13 +30,14 @@ class Rootd_View_Template
 
             ob_start();
 
-            include $path;
+            if ($path) {
+                @include $path;
+            }
 
             $content .= ob_get_contents();
 
             ob_end_clean();
-        }
-        catch(Exception $error) { }
+        } catch(Exception $error) { }
 
         return $content;
     }
@@ -79,7 +80,7 @@ class Rootd_View_Template
                 $path = Rootd::getBasePath($area, $this->_template);
 
                 if (file_exists($path)) {
-                    break;
+                    return $path;
                 }
             }
         }
