@@ -149,8 +149,7 @@ final class Rootd
         $basePath   = '';
         $subPath    = self::fixPath($subPath);
 
-        switch($type)
-        {
+        switch ($type) {
             case 'base':
                 $basePath = self::$_basePath . DIRECTORY_SEPARATOR;
                 break;
@@ -159,6 +158,9 @@ final class Rootd
                 break;
             case 'lib':
                 $basePath = self::$_basePath . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR;
+                break;
+            case 'theme':
+                $basePath = get_template_directory_uri() . DIRECTORY_SEPARATOR;
                 break;
             case 'plugin':
             default:

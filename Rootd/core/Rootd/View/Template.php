@@ -68,18 +68,23 @@ class Rootd_View_Template
      */
     public function getTemplatePath()
     {
+        $path = null;
 
         if ($this->_isAbsolute) {
-            $path = $this->_template;
+            if (file_exists($this->_template)) {
+                $path = $this->_template;
+            }
         } else {
-            $path = Rootd::getBasePath($this->_area, $this->_template);
+            foreach (array($this->_area, 'theme', 'core') as $area) {
+                $path = Rootd::getBasePath($area, $this->_template);
+
+                if (file_exists($path)) {
+                    break;
+                }
+            }
         }
 
-        if (file_exists($path)) {
-            return $path;
-        }
-
-        return false;
+        return $path;
     }
 
     /**
