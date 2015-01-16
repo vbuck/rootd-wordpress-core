@@ -63,8 +63,16 @@ class Rootd_Iso_Helper_Form
         $defaultRegion = ''
     )
     {
+        if (!Rootd::registry('iso_form_js_loaded')) {
+            $baseScript = '<script type="text/javascript" src="' . ( $this->getModuleUrl() . '/Helper/js/form.js' ) . '"></script>';
+
+            Rootd::register('iso_form_js_loaded', true);
+        } else {
+            $baseScript = '';
+        }
+
         return '
-            <script type="text/javascript" src="' . ( $this->getModuleUrl() . '/Helper/js/form.js' ) . '"></script>
+            ' . $baseScript . '
             <script type="text/javascript">
                 new rootdIsoRegionSelector(
                     "' . $countrySelector . '",
