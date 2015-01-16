@@ -63,5 +63,6 @@
 	</modules>
 	<helpers>
 		<post>Rootd_Post_Helper</post>
+		<iso_form>Rootd_Iso_Helper_Form</iso_form>
 	</helpers>
 </config>
