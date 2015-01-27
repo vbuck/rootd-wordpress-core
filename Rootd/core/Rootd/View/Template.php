@@ -25,7 +25,7 @@ class Rootd_View_Template
      */
     protected function _render($content = '')
     {
-        try {
+        //try {
             $path = $this->getTemplatePath();
 
             ob_start();
@@ -37,7 +37,7 @@ class Rootd_View_Template
             $content .= ob_get_contents();
 
             ob_end_clean();
-        } catch(Exception $error) { }
+        //} catch(Exception $error) { }
 
         return $content;
     }
