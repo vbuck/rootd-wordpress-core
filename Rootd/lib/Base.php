@@ -337,6 +337,16 @@ final class Rootd
         return null;
     }
 
+    /**
+     * Get the current framework version.
+     * 
+     * @return string
+     */
+    public static function getVersion()
+    {
+        return (string) self::getConfig()->getNode('modules/rootd/version');
+    }
+
     public static function hasModule($name) 
     {
         $node = self::getConfig()->getNode('global/modules');
