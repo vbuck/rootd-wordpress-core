@@ -74,7 +74,7 @@
                 option = document.createElement('option');
 
                 option.value = code;
-                option.label = this._regions[country][code];
+                option.text  = this._regions[country][code];
 
                 options.push(option);
             }
