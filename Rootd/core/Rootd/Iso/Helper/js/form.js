@@ -58,7 +58,7 @@
                 option = document.createElement('option');
 
                 option.value = code;
-                option.label = this._countries[code];
+                option.text  = this._countries[code];
 
                 options.push(option);
             }
